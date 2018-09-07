@@ -1,0 +1,9 @@
+<form>
+    <select name="browser" [(ngModel)]="browser">
+        <option selected disabled>Choose a browser</option>
+        <option *ngFor="let browser of browsers" [ngValue]="browser">{{ browser.name }}</option>
+    </select>
+    <input name="q" #searchWord> 
+    <button (click)="go(searchWord.value, browser)">Go</button>
+    <p *ngIf="error_text">{{ error_text }}</p>
+</form>
